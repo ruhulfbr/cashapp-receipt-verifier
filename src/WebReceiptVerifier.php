@@ -134,17 +134,22 @@ class WebReceiptVerifier{
      */
     private function validateResponse(object $result): void
     {
+        $notes = strtolower($result->notes);
+        $reference = strtolower($this->_REFERENCE);
+        $username = $this->_USERNAME;
+
         // Check if notes or host doesn't match the expected values
         if (
-            empty($result->notes) ||
-            $result->notes != $this->_REFERENCE ||
-            (empty($result->detail_rows[3]->value) || $result->detail_rows[3]->value != $this->_USERNAME)
+            empty($notes) ||
+            $notes !== $reference ||
+            empty($result->detail_rows[3]->value) ||
+            $result->detail_rows[3]->value !== $username
         ) {
             $this->setResponse('error', 'Failed to verify web receipt, Unmatched notes or host.');
             return;
         }
 
-        $this->setResponse('success','Web Receipt Verified Successfully.', $result);
+        $this->setResponse('success', 'Web Receipt Verified Successfully.', $result);
     }
 
     /**
