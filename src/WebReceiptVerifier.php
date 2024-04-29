@@ -7,7 +7,7 @@
  *
  * @package ruhulfbr/cashapp-receipt-verifier
  * @author Md Ruhul Amin (ruhul11bd@gmail.com)
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 namespace Ruhulfbr\CashApp;
