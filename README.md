@@ -39,7 +39,7 @@ stdClass Object
 (
     [type] => "success"
     [message] => "Web Receipt Verified Successfully."
-    [query] => " stdClass Object";
+    [data] => " stdClass Object";
 )
 
 //Error
